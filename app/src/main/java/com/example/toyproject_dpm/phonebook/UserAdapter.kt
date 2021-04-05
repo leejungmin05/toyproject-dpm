@@ -14,7 +14,8 @@ import kotlinx.android.synthetic.main.item_phonebook_user.view.*
 
 class UserAdapter(
     private val context: Context,
-    private val userDTOList: ArrayList<UserModel>
+   private val userDTOList: ArrayList<UserModel>  //json 파일...?
+
 ): RecyclerView.Adapter<UserAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -39,7 +40,7 @@ class UserAdapter(
         private val userAgeTextView: TextView = view.userAge
         private val userPhoneNumTextView: TextView = view.userPhoneNum
         private val userNativeTextView: TextView = view.userCountry
-        private val userProfileImageView: ImageView = view.userProfile
+        //private val userProfileImageView: ImageView = view.userProfile
 
         fun bind(userModel: UserModel) {
             userNameTextView.text = userModel.Name
