@@ -1,18 +1,15 @@
 package com.example.toyproject_dpm.phonebook
 
-import android.content.ContentValues.TAG
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.toyproject_dpm.R
 import com.example.toyproject_dpm.model.UserModel
-import com.example.toyproject_dpm.model.Users
 import com.google.gson.Gson
-import com.google.gson.GsonBuilder
 import kotlinx.android.synthetic.main.fragment_phone_book_fragment.*
 import org.json.JSONArray
 import org.json.JSONException
@@ -35,13 +32,17 @@ class PhoneBookFragment : Fragment() {
 
         return view
     }
-    private fun userDTOList(): ArrayList<UserModel> {
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val userDTOList = getJSONFromAssets()
+        val userAdapter = UserAdapter(userDTOList, this)
         try {
             val users = Gson().fromJson(getJSONFromAssets(), UserModel::class.java)
 
-//            PBrcv.layoutManager = LinearLayoutManager(this)
-//            val itemAdapter = UserAdapter(this, users.Users)
-//            PBrcv.adapter = itemAdapter
+            PBrcv.layoutManager = LinearLayoutManager(context,RecyclerView.VERTICAL, false)
+            //val itemAdapter = UserAdapter(context, users.Users)
+            PBrcv.adapter = userAdapter
           } catch(e: JSONException) {
             e.printStackTrace()
             }

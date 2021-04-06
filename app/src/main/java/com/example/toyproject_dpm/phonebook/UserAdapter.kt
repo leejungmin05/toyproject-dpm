@@ -13,8 +13,8 @@ import com.example.toyproject_dpm.model.UserModel
 import kotlinx.android.synthetic.main.item_phonebook_user.view.*
 
 class UserAdapter(
-    private val context: Context,
-   private val userDTOList: ArrayList<UserModel>  //json 파일...?
+        private val context: String?,
+        private val userDTOList: ArrayList<UserModel>  //json 파일...?
 
 ): RecyclerView.Adapter<UserAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
