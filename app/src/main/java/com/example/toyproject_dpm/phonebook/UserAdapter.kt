@@ -19,7 +19,7 @@ class UserAdapter(
 ): RecyclerView.Adapter<UserAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
-            LayoutInflater.from(context).inflate(
+            LayoutInflater.from(parent.context).inflate(
                 R.layout.item_phonebook_user,
                 parent,
                 false
@@ -40,14 +40,14 @@ class UserAdapter(
         private val userAgeTextView: TextView = view.userAge
         private val userPhoneNumTextView: TextView = view.userPhoneNum
         private val userNativeTextView: TextView = view.userCountry
-        //private val userProfileImageView: ImageView = view.userProfile
+        private val userProfileImageView: ImageView = view.userProfile
 
         fun bind(userModel: UserModel) {
             userNameTextView.text = userModel.Name
             userAgeTextView.text = userModel.age.toString()
             userPhoneNumTextView.text = userModel.PhoneNum
             userNativeTextView.text = userModel.Country
-            //userProfileImageView.setImageResource(R.drawable.)
+            userProfileImageView.setImageResource(R.drawable.simple0)
 
         }
 

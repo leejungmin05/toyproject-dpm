@@ -28,26 +28,26 @@ class PhoneBookFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_phone_book_fragment, container, false)
-
-        return view
+        return inflater.inflate(R.layout.fragment_phone_book_fragment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val userDTOList = getJSONFromAssets()
-        val userAdapter = UserAdapter(userDTOList, this)
+        val userAdapter = UserAdapter(context,userDTOList)
+        val gson = GsonBuilder().create()
         try {
-            val users = Gson().fromJson(getJSONFromAssets(), UserModel::class.java)
+            val users = gson.fromJson(getJSONFromAssets(), UserModel::class.java)
 
             PBrcv.layoutManager = LinearLayoutManager(context,RecyclerView.VERTICAL, false)
-            //val itemAdapter = UserAdapter(context, users.Users)
+            val itemAdapter = UserAdapter(context, users.Users)
             PBrcv.adapter = userAdapter
           } catch(e: JSONException) {
             e.printStackTrace()
             }
         }
 
+    //json 파일 읽어오기
     private fun getJSONFromAssets(): String? {
         var json: String? = null
         val charset: Charset = Charsets.UTF_8
@@ -57,7 +57,7 @@ class PhoneBookFragment : Fragment() {
             val buffer = ByteArray(size)
             myUsersJSONFile.read(buffer)
             myUsersJSONFile.close()
-            json = String(buffer, charset)
+            json = String(buffer, charset("UTF-8"))
         } catch (ex: IOException) {
             ex.printStackTrace()
             return null
