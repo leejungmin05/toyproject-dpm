@@ -16,18 +16,18 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
 
         bottomNavigationView.setOnNavigationItemSelectedListener(this)
-        supportFragmentManager.beginTransaction().add(R.id.mainLinearLayout, PhoneBookFragment()).commit()
+        supportFragmentManager.beginTransaction().add(R.id.mainFrameLayout, PhoneBookFragment()).commit()
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
 
         when(item.itemId) {
             R.id.page_phoneBook -> {
-                supportFragmentManager.beginTransaction().replace(R.id.mainLinearLayout, PhoneBookFragment()).commitAllowingStateLoss()
+                supportFragmentManager.beginTransaction().replace(R.id.mainFrameLayout, PhoneBookFragment()).commitAllowingStateLoss()
                 return true
             }
             R.id.page_gallery -> {
-               // supportFragmentManager.beginTransaction().replace(R.id.mainLinearLayout, Gallery()).commitAllowingStateLoss()
+                //supportFragmentManager.beginTransaction().replace(R.id.mainFrameLayout, Gallery()).commitAllowingStateLoss()
                 return true
             }
         }
