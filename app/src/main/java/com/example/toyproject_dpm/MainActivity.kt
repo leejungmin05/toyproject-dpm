@@ -11,6 +11,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+
         bottomNavigationView.setOnNavigationItemSelectedListener(this)
         supportFragmentManager.beginTransaction().add(R.id.mainLinearLayout, PhoneBook()).commit()
     }
@@ -29,5 +30,6 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         }
 
         return false
+
     }
 }
