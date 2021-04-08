@@ -1,6 +1,5 @@
 package com.example.toyproject_dpm.phonebook
 
-import android.content.ClipData
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -13,8 +12,7 @@ import com.example.toyproject_dpm.model.UserModel
 import kotlinx.android.synthetic.main.item_phonebook_user.view.*
 
 class UserAdapter(
-        private val context: String?,
-        private val userDTOList: ArrayList<UserModel>  //json 파일...?
+      var userData: MutableList<UserModel> = mutableListOf()  //json 파일...?
 
 ): RecyclerView.Adapter<UserAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -28,11 +26,11 @@ class UserAdapter(
     }
 
     override fun onBindViewHolder(holder: UserAdapter.ViewHolder, position: Int) {
-        holder.bind(userDTOList[position])
+        holder.bind(userData[position])
     }
 
     override fun getItemCount(): Int {
-        return userDTOList.size
+        return userData.size
         }
 
     class ViewHolder(view: View): RecyclerView.ViewHolder(view) {

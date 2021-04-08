@@ -10,8 +10,11 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/PBrcv"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/item_phonebook_user"/>
+        tools:listitem="@layout/item_phonebook_user"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
