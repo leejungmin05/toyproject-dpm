@@ -29,8 +29,8 @@ class PhoneBookFragment : Fragment() {
     ): View? {
         val view =
             inflater.inflate(R.layout.fragment_phone_book_fragment, container, false)
-        val decoration = DividerItemDecoration(context,VERTICAL)
-        PBrcv.addItemDecoration(decoration)
+//        val decoration = DividerItemDecoration(context,VERTICAL)
+//        PBrcv.addItemDecoration(decoration)
 
         val userAdapter = UserAdapter()
         view.PBrcv.adapter = UserAdapter()
