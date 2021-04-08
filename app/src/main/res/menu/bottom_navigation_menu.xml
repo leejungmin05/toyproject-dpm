@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/page_phoneBook"
+        android:enabled="true"
+        android:icon="@mipmap/ic_phonebook"
+        android:title="@string/phoneBook" />
+
+    <item
+        android:id="@+id/page_gallery"
+        android:enabled="true"
+        android:icon="@mipmap/ic_gallery"
+        android:title="@string/gallery" />
+</menu>
