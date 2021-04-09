@@ -34,7 +34,6 @@ class ImageAdapter() : RecyclerView.Adapter<ImageAdapter.ViewHolder>() {
         ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(image: ImageModel) {
             Glide.with(itemView).load(image.download_url).into(binding.imageView)
-
         }
     }
 }
