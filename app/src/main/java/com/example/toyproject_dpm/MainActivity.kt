@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.MenuItem
 import androidx.databinding.DataBindingUtil
 import com.example.toyproject_dpm.databinding.ActivityMainBinding
+import com.example.toyproject_dpm.gallery.GalleryFragment
 import com.example.toyproject_dpm.phonebook.PhoneBookFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
@@ -20,8 +21,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         val newFragment = when (item.itemId) {
             R.id.page_phoneBook -> PhoneBookFragment()
-            //TODO (GalleryFragment로 변경)
-            R.id.page_gallery -> PhoneBookFragment()
+            R.id.page_gallery -> GalleryFragment()
             else -> null
         } ?: run {
             return false
