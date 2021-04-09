@@ -14,11 +14,11 @@ class ImageAdapter() : RecyclerView.Adapter<ImageAdapter.ViewHolder>() {
     lateinit var ImageData: ArrayList<ImageModel>
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val mbinding = ItemGridBinding.inflate(
+        val view = ItemGridBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false)
-        return ViewHolder(mbinding)
+        return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
