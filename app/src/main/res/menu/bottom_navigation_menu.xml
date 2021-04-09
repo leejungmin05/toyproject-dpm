@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/page_phoneBook"
+        android:enabled="true"
+        android:title="연락처" />
+
+    <item
+        android:id="@+id/page_gallery"
+        android:enabled="true"
+        android:title="갤러리" />
+</menu>

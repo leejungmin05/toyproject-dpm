@@ -21,31 +21,31 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
-            android:text="Name" />
+            android:text="@string/Name" />
 
         <TextView
             android:id="@+id/userAge"
-            android:layout_width="68dp"
+            android:layout_width="41dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
-            android:text="Age" />
+            android:text="@string/Age" />
 
         <TextView
             android:id="@+id/userPhoneNum"
-            android:layout_width="70dp"
+            android:layout_width="104dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
-            android:text="PhoneNum" />
+            android:text="@string/PhoneNum" />
 
         <TextView
             android:id="@+id/userCountry"
-            android:layout_width="68dp"
+            android:layout_width="92dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
-            android:text="Country" />
+            android:text="@string/Country" />
 
     </LinearLayout>
 </LinearLayout>
