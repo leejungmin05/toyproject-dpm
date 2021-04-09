@@ -8,3 +8,5 @@ data class ImageModel(
     val url: String,
     val download_url: String
 )
+
+
