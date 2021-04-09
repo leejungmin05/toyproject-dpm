@@ -1,5 +1,13 @@
 <resources>
     <string name="app_name">toyproject_dpm</string>
+
+    <!-- user item  -->
+    <string name="Name">Name</string>
+    <string name="Age">Age</string>
+    <string name="PhoneNum">PhoneNum</string>
+    <string name="Country">Country</string>
+
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
