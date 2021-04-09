@@ -44,6 +44,7 @@ class UserAdapter(
 
         fun bind(userModel: UserModel) {
             userNameTextView.text = userModel.Name
+            //ToDo ("살" string인자로 넣기)
             userAgeTextView.text = userModel.age.toString() +"살"
             userPhoneNumTextView.text = userModel.PhoneNum
             userNativeTextView.text = userModel.Country

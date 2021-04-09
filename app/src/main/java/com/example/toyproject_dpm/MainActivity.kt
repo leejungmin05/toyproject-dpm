@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         val newFragment = when (item.itemId) {
             R.id.page_phoneBook -> PhoneBookFragment()
+            //TODO (GalleryFragment로 변경)
             R.id.page_gallery -> PhoneBookFragment()
             else -> null
         } ?: run {

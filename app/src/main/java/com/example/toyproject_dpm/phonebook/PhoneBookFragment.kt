@@ -38,8 +38,8 @@ class PhoneBookFragment : Fragment() {
             val jArray = jObject.getJSONArray("data")
 
             for (i in 0 until jArray.length()) {
-                val contactObj = gson.fromJson(jArray.get(i).toString(), UserModel::class.java)
-                userData.add(contactObj)
+                val data = gson.fromJson(jArray.get(i).toString(), UserModel::class.java)
+                userData.add(data)
             }
         } catch (ex: IOException) {
             ex.printStackTrace()
