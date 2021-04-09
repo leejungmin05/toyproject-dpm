@@ -35,6 +35,14 @@ class ImageAdapter() : RecyclerView.Adapter<ImageAdapter.ViewHolder>() {
         fun bind(image: ImageModel) {
             Glide.with(itemView).load(image.download_url).into(binding.imageView)
 
+            itemView.setOnClickListener {
+                val intent = Intent(it.context, ImgDetailActivity::class.java)
+                intent.putExtra("image", image.download_url)
+                intent.putExtra("author", image.author)
+                intent.putExtra("width", image.width.toString())
+                intent.putExtra("height", image.height.toString())
+                it.context.startActivity(intent)
+            }
         }
     }
 }
