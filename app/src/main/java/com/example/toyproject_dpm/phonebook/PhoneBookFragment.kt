@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -47,6 +48,8 @@ class PhoneBookFragment : Fragment() {
         return userData
     }
 
+
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -62,15 +65,22 @@ class PhoneBookFragment : Fragment() {
         userAdapter.userData = getJSONFromAssets()
         mbinding.PBrcv.adapter = userAdapter
         mbinding.PBrcv.layoutManager = LinearLayoutManager(this.context)
+
+
         val decoration = DividerItemDecoration(
             mbinding.PBrcv.context,
             LinearLayoutManager(this.context).orientation
         )
         mbinding.PBrcv.addItemDecoration(decoration)
 
+        mbinding.fabBtn.setOnClickListener{
+            Toast.makeText(this.context,"clicked",Toast.LENGTH_LONG).show()
+
+        }
 
         return mbinding.root
     }
 
 
 }
+

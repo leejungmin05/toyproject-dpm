@@ -12,6 +12,7 @@ import com.example.toyproject_dpm.phonebook.PhoneBookFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 
+
 private const val TAG = "MainActivity"
 
 
@@ -37,6 +38,7 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
         bottomNavigationView.setOnNavigationItemSelectedListener(this)
         supportFragmentManager.beginTransaction().replace(R.id.fl_container, PhoneBookFragment())
             .commit()
+
     }
 
 }
