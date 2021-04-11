@@ -1,9 +1,11 @@
 package com.example.toyproject_dpm.gallery
 
 
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bumptech.glide.Glide
+import com.example.toyproject_dpm.R
 import com.example.toyproject_dpm.databinding.ActivityImgDetailBinding
 
 class ImgDetailActivity : AppCompatActivity() {
@@ -31,6 +33,19 @@ class ImgDetailActivity : AppCompatActivity() {
 
         Glide.with(this).load(image).into(mbinding.detailImg)
     }
+
+
+    override fun onConfigurationChanged(newConfig: Configuration) {
+        super.onConfigurationChanged(newConfig)
+
+        if (newConfig.orientation == Configuration.ORIENTATION_PORTRAIT) {
+            setContentView(R.layout.fragment_gallery)
+        } else if (newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            setContentView(R.layout.fragment_gallery_horizontal)
+        }
+    }
+
+
 
     private val IMAGE = "image"
     private val AUTHOR = "author"
