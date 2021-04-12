@@ -21,8 +21,8 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         val newFragment = when (item.itemId) {
-            R.id.page_phoneBook -> PhoneBookFragment()
-            R.id.page_gallery -> GalleryFragment()
+            R.id.page_phoneBook -> PhoneBookFragment.newInstance()
+            R.id.page_gallery -> GalleryFragment.newInstance()
             else -> null
         } ?: run {
             return false

@@ -22,14 +22,15 @@ import com.example.toyproject_dpm.model.ImageModel as ImageModel
 class GalleryFragment : Fragment() {
     private lateinit var mbinding: FragmentGalleryBinding
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View {
         mbinding = FragmentGalleryBinding.inflate(inflater, container, false)
 
         getImageByRetrofit()
         return mbinding.root
     }
+
     fun responseSuccess(response: ImageList?) {
         val images: ArrayList<ImageModel> = arrayListOf()
         if (response != null) {
@@ -63,7 +64,14 @@ class GalleryFragment : Fragment() {
         })
     }
 
-
+    companion object {
+        fun newInstance(): GalleryFragment {
+            val args = Bundle()
+            val fragment = GalleryFragment()
+            fragment.arguments = args
+            return fragment
+        }
+    }
 }
 
 

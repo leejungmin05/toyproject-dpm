@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.toyproject_dpm.R
 import com.example.toyproject_dpm.databinding.FragmentPhoneBookFragmentBinding
+import com.example.toyproject_dpm.gallery.GalleryFragment
 import com.example.toyproject_dpm.model.UserModel
 import com.google.gson.Gson
 import org.json.JSONObject
@@ -79,6 +80,14 @@ class PhoneBookFragment : Fragment() {
         }
 
         return mbinding.root
+    }
+    companion object {
+        fun newInstance(): PhoneBookFragment {
+            val args = Bundle()
+            val fragment = PhoneBookFragment()
+            fragment.arguments = args
+            return fragment
+        }
     }
 
 
