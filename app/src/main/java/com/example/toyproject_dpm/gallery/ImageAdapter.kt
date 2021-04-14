@@ -46,4 +46,11 @@ class ImageAdapter() : RecyclerView.Adapter<ImageAdapter.ViewHolder>() {
             }
         }
     }
+
+    fun submitList(list: List<ImageModel>) {
+        ImageData.clear()
+        ImageData.addAll(list)
+        notifyDataSetChanged()
+
+    }
 }

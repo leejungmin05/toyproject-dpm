@@ -44,7 +44,7 @@ class GalleryFragment : Fragment() {
             }
         }
         val imageAdapter = ImageAdapter()
-        imageAdapter.ImageData = images
+        imageAdapter.submitList(images)
         mbinding.Gridrcv.adapter = imageAdapter
         mbinding.Gridrcv.layoutManager = GridLayoutManager(this.context, 4)
     }
