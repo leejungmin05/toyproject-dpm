@@ -11,7 +11,7 @@ import com.example.toyproject_dpm.model.ImageModel
 
 
 class ImageAdapter() : RecyclerView.Adapter<ImageAdapter.ViewHolder>() {
-    lateinit var ImageData: ArrayList<ImageModel>
+    private var ImageData = ArrayList<ImageModel>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = ItemGridBinding.inflate(
@@ -23,6 +23,7 @@ class ImageAdapter() : RecyclerView.Adapter<ImageAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(ImageData[position])
+        holder.binding.executePendingBindings()
     }
 
     override fun getItemCount(): Int {
@@ -30,7 +31,7 @@ class ImageAdapter() : RecyclerView.Adapter<ImageAdapter.ViewHolder>() {
     }
 
     class ViewHolder(
-        private val binding: ItemGridBinding
+        val binding: ItemGridBinding
         ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(image: ImageModel) {
             Glide.with(itemView).load(image.download_url).into(binding.imageView)

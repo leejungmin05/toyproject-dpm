@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android" >
+    <data>
+        <variable
+            name="userModel"
+            type="com.example.toyproject_dpm.model.UserModel" />
+    </data>
+
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="60dp">
 
@@ -12,7 +18,10 @@
         <ImageView
             android:id="@+id/userProfile"
             android:layout_width="60dp"
-            android:layout_height="60dp" />
+            android:layout_height="60dp"
+            android:imageDrawable="@{userModel.image}"
+
+           />
 
 
         <TextView
@@ -21,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
-            android:text="@string/Name" />
+            android:text="@{userModel.name}"/>
 
         <TextView
             android:id="@+id/userAge"
@@ -29,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
-            android:text="@string/Age" />
+            android:text="@{userModel.age}" />
 
         <TextView
             android:id="@+id/userPhoneNum"
@@ -37,7 +46,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
-            android:text="@string/PhoneNum" />
+            android:text="@{userModel.phoneNum}" />
 
         <TextView
             android:id="@+id/userCountry"
@@ -45,7 +54,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
-            android:text="@string/Country" />
+            android:text="@{userModel.country}" />
 
     </LinearLayout>
 </LinearLayout>
+</layout>
